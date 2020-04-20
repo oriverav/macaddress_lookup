@@ -20,7 +20,7 @@ class MacLookup:
             "search":self.macaddress
         }
         headers = {
-            "X-Authentication-Token": "at_1ttZOSq4T8PdX8yR9RHQGxDSX3MHV"  # ADD YOUR APIKEY HERE ("APIKEY")
+            "X-Authentication-Token": None  # ADD YOUR APIKEY HERE ("APIKEY")
         }
 
         if headers["X-Authentication-Token"]:
