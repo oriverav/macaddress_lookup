@@ -20,11 +20,14 @@ class MacLookup:
             "search":self.macaddress
         }
         headers = {
-            "X-Authentication-Token": ""  # ADD YOUR APIKEY HERE
+            "X-Authentication-Token": None  # ADD YOUR APIKEY HERE
         }
-        r = requests.get(url, headers=headers, params=payload)
-        response = r.json()
-        return response
+
+        if headers["X-Authentication-Token"]:
+            r = requests.get(url, headers=headers, params=payload)
+            response = r.json()
+            return response
+        return ""
 
     def tab_mac_info(self):
         mac_response = self.macaddress_lookup_request()
@@ -78,6 +81,8 @@ def main():
             print("INSERT VALID MAC")
     except IndexError:
         print("PLEASE INSERT A MAC ADDRESS")
+    except TypeError:
+        print("MISSING TOKEN, PLEASE SIGN UP FOR https://macaddress.io TO GET YOUR TOKEN")
 
 
 main()
