@@ -4,8 +4,10 @@ Use the https://macaddress.io API to query for MAC address information.
 
 ## Installation
 
+```bash
 git clone https://github.com/oriverav/macaddress_lookup.git
 cd macaddress_lookup
+```
 
 ## Usage
 
